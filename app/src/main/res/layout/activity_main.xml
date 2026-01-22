@@ -24,4 +24,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <RadioGroup
+        android:id="@+id/rgForwardType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbSms"
+            android:text="Пересылка через SMS"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/rbTelegram"
+            android:text="Пересылка через Telegram"/>
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/etTelegramToken"
+        android:hint="Telegram Bot Token"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/etTelegramChatId"
+        android:hint="Telegram Chat ID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
 </LinearLayout>
