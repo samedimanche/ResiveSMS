@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import android.content.Intent
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,6 +15,17 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            startForegroundService(
+                Intent(this, SmsForwardService::class.java)
+            )
+        } else {
+            startService(
+                Intent(this, SmsForwardService::class.java)
+            )
+        }
+
 
         // View
         val etPatterns = findViewById<EditText>(R.id.etPatterns)
